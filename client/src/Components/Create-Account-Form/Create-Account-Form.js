@@ -11,6 +11,7 @@ export default class CreateAccountForm extends React.Component {
       dob,
       location,
       email,
+      avatar,
       username,
       password
     } = ev.target;
@@ -19,6 +20,7 @@ export default class CreateAccountForm extends React.Component {
       lastname: lastname.value,
       dob: dob.value,
       location: location.value,
+      avatar: avatar.value,
       email: email.value,
       username: username.value,
       password: password.value
@@ -31,19 +33,21 @@ export default class CreateAccountForm extends React.Component {
       <div className='CreateAccountForm'>
         <form onSubmit={this.formSubmit}>
           <label>First Name</label>
-          <input name='firstname' type='text' />
+          <input name='firstname' type='text' required />
           <label>Last Name</label>
-          <input name='lastname' type='text' />
+          <input name='lastname' type='text' required />
           <label>Date of Birth</label>
-          <input name='dob' type='date' />
+          <input name='dob' type='date' required />
           <label>Location</label>
-          <input name='location' type='text' />
+          <input name='location' type='text' required />
           <label>Email</label>
-          <input name='email' type='email' />
+          <input name='email' type='email' required />
+          <label>Avatar Image Url</label>
+          <input name='avatar' type='url' required />
           <label>Username</label>
-          <input name='username' type='text' />
+          <input name='username' type='text' required />
           <label>Password</label>
-          <input name='password' type='password' />
+          <input name='password' type='password' required />
           <div className='btn-row'>
             <button type='submit'>create</button>
             <Link to='/Login'>Already have an account?</Link>

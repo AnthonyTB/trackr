@@ -25,17 +25,40 @@ label {
   margin-bottom: 10px;
 }
 
+form {
+  width: 65%;
+}
+
 form button {
-  background: transparent;
   color: #fff;
   border-radius: 5px;
-  font-size: calc(0px + 2vmin);
+  font-size: calc(5px + 2vmin);
   float: left;
+  border: 0;
+  background: var(--gradient);
+  padding: 3px 6px 3px 6px;
+  margin-top: 15px;
 }
 
 form a {
   color: #fff;
   text-decoration: none;
-  font-size: calc(0px + 2vmin);
+  font-size: calc(5px + 2vmin);
   float: right;
+  margin-top: 15px;
+}
+
+@media only screen and (min-width: 1200px) {
+  form {
+    width: 25%;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  form a,
+  form button {
+    font-size: calc(-2px + 2vmin);
+  }
 }
