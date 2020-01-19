@@ -1,0 +1,41 @@
+.CreateAccountForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(2px + 2vmin);
+  color: white;
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #fff;
+  background: transparent;
+  padding: 5px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+form button {
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  font-size: calc(0px + 2vmin);
+  float: left;
+}
+
+form a {
+  color: #fff;
+  text-decoration: none;
+  font-size: calc(0px + 2vmin);
+  float: right;
+}
