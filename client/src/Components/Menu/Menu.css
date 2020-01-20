@@ -1,0 +1,23 @@
+.Menu {
+  color: #fff;
+  position: absolute;
+  right: 0;
+}
+
+.Menu a,
+.Menu button {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.Menu p {
+  display: inline;
+  margin-right: 10px;
+  font-size: calc(8px + 2vmin);
+}
+
+.loggedOut,
+.loggedIn {
+  display: inline-flex;
+}

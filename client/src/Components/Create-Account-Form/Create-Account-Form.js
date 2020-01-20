@@ -20,7 +20,9 @@ export default class CreateAccountForm extends React.Component {
       lastname: lastname.value,
       dob: dob.value,
       location: location.value,
-      avatar: avatar.value,
+      avatar:
+        avatar.value ||
+        'https://www.sackettwaconia.com/wp-content/uploads/default-profile.png',
       email: email.value,
       username: username.value,
       password: password.value
@@ -43,7 +45,7 @@ export default class CreateAccountForm extends React.Component {
           <label>Email</label>
           <input name='email' type='email' required />
           <label>Avatar Image Url</label>
-          <input name='avatar' type='url' required />
+          <input name='avatar' type='url' />
           <label>Username</label>
           <input name='username' type='text' required />
           <label>Password</label>
