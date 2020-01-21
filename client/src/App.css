@@ -1,8 +1,4 @@
 :root {
   /* background-image */
-  --gradient: linear-gradient(
-    90.6deg,
-    rgba(2, 161, 249, 1) 0.3%,
-    rgba(41, 241, 156, 1) 99.7%
-  );
+  --gradient: linear-gradient(90.6deg, #02a1f9 0.3%, #29f19c 99.7%);
 }

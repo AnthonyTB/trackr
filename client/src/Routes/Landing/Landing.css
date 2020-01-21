@@ -1,0 +1,144 @@
+.Landing {
+  display: block;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.Hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  z-index: 40;
+  position: relative;
+}
+
+.Landing h1,
+.Landing h3 {
+  color: #fff;
+  text-align: center;
+}
+
+.smallLogo {
+  width: 80px;
+  height: 100%;
+}
+
+.sources {
+  margin-top: 200px;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+}
+
+.media-platforms {
+  height: 100%;
+  width: 300px;
+  margin-left: -170px;
+  margin-top: 20px;
+}
+
+.sources {
+  z-index: 50;
+  position: relative;
+  color: #06060a;
+}
+
+.data h4,
+.sources h4 {
+  font-size: calc(15px + 2vmin);
+  text-transform: uppercase;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#02a1f9),
+    to(#29f19c)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.curve {
+  background-image: url('../../Assets/curve2.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2000px;
+  width: 3000px;
+  z-index: 30;
+  position: absolute;
+  left: -1500px;
+  margin-top: -540px;
+  padding-bottom: 100px;
+  right: 0;
+}
+
+.curve-black {
+  background-image: url('../../Assets/curve-black.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 2000px;
+  width: 3000px;
+  z-index: 31;
+  position: absolute;
+  left: -220px;
+  margin-top: -110px;
+  right: 0;
+}
+
+.data {
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.data p,
+.sources p {
+  width: 80%;
+  margin: auto auto;
+}
+
+.chart-svg {
+  margin-top: 40px;
+  height: 100%;
+  width: 370px;
+}
+
+.sources-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.item:nth-child(1) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}

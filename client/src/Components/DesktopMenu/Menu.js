@@ -25,7 +25,7 @@ export default class Menu extends React.Component {
 
   render() {
     return (
-      <div className='Menu'>
+      <div className='Desktop-Menu'>
         <nav>
           <Link to='/Home'>Home</Link>
           <Link to='/Improve'>Improve</Link>

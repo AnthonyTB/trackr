@@ -9,7 +9,8 @@ import CreateAccountPage from './Routes/Create-Account/Create-Account';
 import Auth from './Helpers/Auth';
 import config from './config.js';
 import Context from './Components/Context/Context';
-import Menu from './Components/Menu/Menu';
+import DesktopMenu from './Components/DesktopMenu/Menu';
+import MobileMenu from './Components/MobileMenu/Menu';
 
 class App extends React.Component {
   constructor(props) {
@@ -83,7 +84,8 @@ class App extends React.Component {
           onLogout: this.onLogout
         }}
       >
-        <Menu />
+        <DesktopMenu />
+        <MobileMenu />
         <Switch>
           <Route
             exact

@@ -2,6 +2,8 @@
   color: #fff;
   position: absolute;
   right: 0;
+  top: 0;
+  margin-top: 5px;
 }
 
 .Menu a,
@@ -20,4 +22,14 @@
 .loggedOut,
 .loggedIn {
   display: inline-flex;
+}
+
+@media only screen and (min-width: 1024px) {
+  .Mobile-Menu {
+    display: none;
+  }
+
+  .Desktop-Menu {
+    display: inline-flex;
+  }
 }
