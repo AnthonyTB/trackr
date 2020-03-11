@@ -9,9 +9,10 @@
 }
 
 .Mobile-Menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   margin-top: 15px;
   margin-right: 10px;
+  z-index: 1000;
 }

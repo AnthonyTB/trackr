@@ -1,10 +1,10 @@
 .Landing {
   display: block;
   position: relative;
-  max-width: 1200px;
   margin: 0 auto;
   width: 100vw;
   overflow-x: hidden;
+  background-color: #fff;
 }
 
 .Hero {
@@ -12,24 +12,62 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  z-index: 40;
+  z-index: 29;
   position: relative;
+  height: 100vh;
+  background-color: #06060a;
 }
 
-.Landing h1,
-.Landing h3 {
+.Landing h1 {
   color: #fff;
+  text-align: center;
+  margin-top: -300px;
+}
+
+h1 span {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#02a1f9),
+    to(#29f19c)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  z-index: 999;
+  position: relative;
+  margin-top: -330px;
+}
+
+.hero-text h3 {
+  font-size: 25px;
+  width: 80%;
+  font-family: kobenhavn-sans, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin: auto auto;
+  color: #06060a;
   text-align: center;
 }
 
 .smallLogo {
-  width: 80px;
-  height: 100%;
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: auto auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bg {
+  background-color: #fff;
 }
 
 .sources {
-  margin-top: 200px;
+  margin-top: 400px;
   color: #fff;
   text-align: center;
   z-index: 1000;
@@ -52,27 +90,19 @@
 .sources h4 {
   font-size: calc(15px + 2vmin);
   text-transform: uppercase;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#02a1f9),
-    to(#29f19c)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #06060a;
 }
 
 .curve {
   background-image: url('../../Assets/curve2.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 2000px;
-  width: 3000px;
+  height: 350px;
+  width: 2000px;
   z-index: 30;
   position: absolute;
-  left: -1500px;
-  margin-top: -540px;
+  left: -1600px;
+  margin-top: -430px;
   padding-bottom: 100px;
   right: 0;
 }
@@ -81,12 +111,11 @@
   background-image: url('../../Assets/curve-black.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 2000px;
-  width: 3000px;
+  height: 350px;
+  width: 2000px;
   z-index: 31;
   position: absolute;
-  left: -220px;
-  margin-top: -110px;
+  left: -120px;
   right: 0;
 }
 
@@ -102,11 +131,12 @@
 .sources p {
   width: 80%;
   margin: auto auto;
+  color: #06060a;
 }
 
 .chart-svg {
   margin-top: 40px;
-  height: 100%;
+  height: auto;
   width: 370px;
 }
 
@@ -141,4 +171,21 @@
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .curve {
+    height: 700px;
+    width: 3000px;
+    left: -20px;
+    margin-top: -760px;
+    padding-bottom: 100px;
+  }
+
+  .curve-black {
+    height: 350px;
+    width: 2000px;
+    left: -120px;
+    display: none;
+  }
 }

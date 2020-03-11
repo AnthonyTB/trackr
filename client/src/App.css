@@ -2,3 +2,17 @@
   /* background-image */
   --gradient: linear-gradient(90.6deg, #02a1f9 0.3%, #29f19c 99.7%);
 }
+
+body::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: var(--gradient);
+  border-radius: 15px;
+}

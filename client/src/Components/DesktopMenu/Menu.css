@@ -1,22 +1,24 @@
-.Menu {
+.Desktop-Menu {
   color: #fff;
   position: absolute;
   right: 0;
   top: 0;
   margin-top: 5px;
+  z-index: 60;
 }
 
-.Menu a,
+.Desktop-Menu a,
 .Menu button {
   margin-right: 10px;
   color: #fff;
   text-decoration: none;
 }
 
-.Menu p {
+.Desktop-Menu p {
   display: inline;
   margin-right: 10px;
   font-size: calc(8px + 2vmin);
+  color: #fff;
 }
 
 .loggedOut,
