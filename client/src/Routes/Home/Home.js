@@ -1,9 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { React } from 'react';
 import './Home.css';
 
-export default class Home extends React.Component {
-  render() {
-    return <div className='Home'></div>;
-  }
+export function Home() {
+  return <div className='Home'></div>;
 }
