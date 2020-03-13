@@ -1,0 +1,27 @@
+.Footer {
+  width: 100vw;
+  overflow-x: hidden;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+
+.curve-black {
+  background-image: url('../../Assets/curve-black.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  width: 2000px;
+  z-index: 31;
+  position: absolute;
+  left: -120px;
+  right: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .curve-black {
+    height: 250px;
+    width: 800px;
+    left: 10px;
+  }
+}

@@ -17,7 +17,7 @@ function DesktopMenu() {
       return (
         <div className='loggedOut'>
           <Link to='/Login'>Login</Link>
-          <Link to='/Create-Account'>Register</Link>
+          <Link to='/Signup'>Signup</Link>
         </div>
       );
     }

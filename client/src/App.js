@@ -9,6 +9,7 @@ import { ContextProvider } from './Components/Context/Context';
 import CreateAccountPage from './Routes/Create-Account/Create-Account';
 import DesktopMenu from './Components/DesktopMenu/Menu';
 import MobileMenu from './Components/MobileMenu/Menu';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
             }}
           />
         </Switch>
+        <Footer />
       </ContextProvider>
     </>
   );

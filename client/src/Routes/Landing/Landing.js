@@ -10,7 +10,8 @@ function Landing() {
     <div className='Landing'>
       <div className='Hero'>
         <h1>
-          Are you curious about your social media traffic<span>?</span>
+          Are you curious about your social media traffic
+          <span className='alt-color'>?</span>
         </h1>
       </div>
       <div>
@@ -20,12 +21,15 @@ function Landing() {
         <h3>
           Here at{' '}
           <img className='smallLogo' src={smallLogo} alt='trackr logo' /> we
-          make that data accessible to you.
+          make that data accessible to you<span className='alt-color'>.</span>
         </h3>
       </div>
       <section className='sources'>
-        <h4>all well known platforms</h4>
-        <p>We are compatible with all your favorite social media platforms</p>
+        <div className='text'>
+          <h4>all well known platforms</h4>
+          <hr className='underline' />
+          <p>We are compatible with all your favorite social media platforms</p>
+        </div>
         <div className='sources-container'>
           <img
             className='media-platforms'
@@ -36,18 +40,18 @@ function Landing() {
       </section>
 
       <section className='data'>
-        <h4>Keep up to date</h4>
-        <p>
-          Compare your current stats with your past to see if your accounts are
-          growing
-        </p>
+        <div className='text'>
+          <h4>Keep up to date</h4>
+          <hr className='underline' />
+          <p>
+            Compare your current stats with your past to see if your accounts
+            are growing
+          </p>
+        </div>
         <div className='chart-svg'>
           <ChartIcon />
         </div>
       </section>
-      <div>
-        <div className='curve-black'></div>
-      </div>
     </div>
   );
 }

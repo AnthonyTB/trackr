@@ -4,7 +4,9 @@
   align-items: center;
   justify-content: center;
   font-size: calc(2px + 2vmin);
-  color: white;
+  color: #fff;
+  overflow: hidden;
+  margin-top: 100px;
 }
 
 label,
@@ -13,45 +15,105 @@ input {
 }
 
 input {
-  width: 100%;
-  border: 1px solid #fff;
+  width: 96%;
+  border: 0;
+  border-bottom: 1px solid #fff;
   background: transparent;
   padding: 5px;
   margin-bottom: 15px;
-  color: #fff;
 }
 
 label {
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin: 0;
+}
+
+.featured {
+  width: 40%;
+  position: relative;
+  -ms-flex: 1;
+  flex: 1;
+  float: left;
+  min-width: 230px;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.left svg {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  height: 200%;
+  width: 200%;
+  background-color: #fff;
+  border-radius: 70%;
+  -ms-transform: translateX(-50%) translateY(-25%);
+  transform: translateX(-50%) translateY(-25%);
+}
+
+.Branding-Logo {
+  height: auto;
+  width: 300px;
+  position: absolute;
+  top: 50px;
+  left: 130px;
+  -ms-transform: translateX(calc(-50% - 10px));
+  transform: translateX(calc(-50% - 10px));
+}
+
+.Heading {
+  color: #06060a;
+  text-align: left;
+  width: 80%;
+  margin-top: 250px;
+  z-index: 5;
+  position: relative;
 }
 
 form {
-  width: 65%;
+  width: 60%;
 }
 
 form button {
-  color: #fff;
-  border-radius: 5px;
   font-size: calc(5px + 2vmin);
   float: left;
   border: 0;
-  background: var(--gradient);
+  background: 0;
+  border: 1px solid #fff;
   padding: 3px 6px 3px 6px;
   margin-top: 15px;
   margin-bottom: 25px;
+  color: #fff;
 }
 
 form a {
-  color: #fff;
   text-decoration: none;
   font-size: calc(5px + 2vmin);
   float: right;
   margin-top: 15px;
+  color: #fff;
 }
 
 @media only screen and (min-width: 1200px) {
+  .form-container {
+    border-radius: 10px;
+    background: #06060a;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    width: 700px;
+    height: 450px;
+  }
+
   form {
-    width: 25%;
+    width: 40%;
+    margin: 30px;
+    float: right;
+  }
+
+  label {
+    font-size: 0.8em;
   }
 
   input {

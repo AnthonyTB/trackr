@@ -19,11 +19,17 @@
 
 .menu-button {
   float: right;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin-bottom: 10px;
 }
 
 .slide-out {
   clear: both;
   margin-top: 15px;
+  margin-right: -10px;
   height: 45%;
   width: 200px;
   background-color: #fff;
