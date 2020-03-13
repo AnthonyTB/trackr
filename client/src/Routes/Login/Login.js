@@ -1,6 +1,8 @@
 import { React } from 'react';
-import '/Login.css';
+import './Login.css';
 
-export function Login() {
+function Login() {
   return <div className='Login'></div>;
 }
+
+export default Login;

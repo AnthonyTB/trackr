@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-import Context from '../Context/Context';
+import { Context } from '../Context/Context';
 
-export default class Menu extends React.Component {
-  static contextType = Context;
+function DesktopMenu() {
+  const { isLoggedIn, updateStatus, Logout } = React.useContext(Context);
 
-  loginStatus = () => {
-    if (this.context.isLoggedIn) {
+  const loginStatus = () => {
+    if (isLoggedIn) {
       return (
         <div className='loggedIn'>
-          <button onClick={this.context.Logout}>Logout</button>
+          <button onClick={Logout}>Logout</button>
         </div>
       );
     } else {
@@ -23,16 +23,16 @@ export default class Menu extends React.Component {
     }
   };
 
-  render() {
-    return (
-      <div className='Desktop-Menu'>
-        <nav>
-          <Link to='/Home'>Home</Link>
-          <Link to='/Improve'>Improve</Link>
-          <p>|</p>
-          {this.loginStatus()}
-        </nav>
-      </div>
-    );
-  }
+  return (
+    <div className='Desktop-Menu'>
+      <nav>
+        <Link to='/Home'>Home</Link>
+        <Link to='/Improve'>Improve</Link>
+        <p>|</p>
+        {loginStatus()}
+      </nav>
+    </div>
+  );
 }
+
+export default DesktopMenu;

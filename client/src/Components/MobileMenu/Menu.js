@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-import Context from '../Context/Context';
+import { Context } from '../Context/Context';
 import MenuIcon from '../SVGs/menu';
+import CloseMenuIcon from '../SVGs/close-menu';
 
-export default class Menu extends React.Component {
-  static contextType = Context;
+function MobileMenu() {
+  const { isLoggedIn, Logout } = React.useContext(Context);
+  const [menuStatus, toggle] = React.useState(false);
 
-  loginStatus = () => {
-    if (this.context.isLoggedIn) {
+  const toggleMenu = () => toggle(!menuStatus);
+
+  const loginStatus = () => {
+    if (isLoggedIn) {
       return (
         <div className='loggedIn'>
-          <button onClick={this.context.Logout}>Logout</button>
+          <button onClick={Logout}>Logout</button>
         </div>
       );
     } else {
@@ -24,13 +28,16 @@ export default class Menu extends React.Component {
     }
   };
 
-  render() {
-    return (
-      <div className='Mobile-Menu'>
-        <nav>
-          <MenuIcon />
-        </nav>
-      </div>
-    );
-  }
+  return (
+    <div className='Mobile-Menu'>
+      <nav>
+        <button className='menu-button' onClick={() => toggleMenu()}>
+          {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+        </button>
+        <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
+      </nav>
+    </div>
+  );
 }
+
+export default MobileMenu;

@@ -1,8 +1,8 @@
-import { React } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Create-Account-Form.css';
 
-export function CreateAccountForm() {
+function CreateAccountForm() {
   const formSubmit = ev => {
     ev.preventDefault();
     const {
@@ -57,3 +57,5 @@ export function CreateAccountForm() {
     </div>
   );
 }
+
+export default CreateAccountForm;
