@@ -6,3 +6,12 @@
   display: flex;
   align-items: center;
 }
+
+.Heading {
+  color: grey;
+  text-align: center;
+  width: 60%;
+  margin: auto auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
