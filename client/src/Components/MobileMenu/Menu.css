@@ -11,7 +11,7 @@
 .Mobile-Menu {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 10px;
   margin-top: 10px;
   margin-right: 10px;
   z-index: 1000 !important;
@@ -39,6 +39,7 @@
   padding-top: 60px;
   transition: 0.5s;
   margin-top: 1%;
+  box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
 
 .slide-out.true {

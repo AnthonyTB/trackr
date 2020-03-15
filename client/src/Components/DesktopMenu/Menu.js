@@ -25,6 +25,7 @@ function DesktopMenu() {
 
   return (
     <div className='Desktop-Menu'>
+      <div className='menu-curve'></div>
       <nav>
         <Link to='/Home'>Home</Link>
         <Link to='/Improve'>Improve</Link>

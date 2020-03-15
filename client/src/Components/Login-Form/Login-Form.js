@@ -1,5 +1,6 @@
-import { React } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Login-Form.css';
 
 function LoginForm() {
   const login = e => {
@@ -11,14 +12,14 @@ function LoginForm() {
   return (
     <form onSubmit={login}>
       <div className='login-form-container'>
-        <label>username</label>
+        <label>Username</label>
         <input type='text' name='username' required />
-        <label>password</label>
+        <label>Password</label>
         <input type='password' name='password' required />
-        <div className='btn-row'>
-          <button type='submit'>login</button>
-          <Link to='/Signup'>New user?</Link>
-        </div>
+      </div>
+      <div className='btn-row'>
+        <button type='submit'>login</button>
+        <Link to='/Signup'>New user?</Link>
       </div>
     </form>
   );

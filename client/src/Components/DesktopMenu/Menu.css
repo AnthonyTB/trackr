@@ -8,6 +8,11 @@
   margin-right: 20px;
 }
 
+.Desktop-Menu a {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
 .Desktop-Menu a,
 .Menu button {
   margin-right: 10px;
@@ -19,12 +24,26 @@
   display: inline;
   margin-right: 10px;
   font-size: calc(8px + 2vmin);
-  color: #fff;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .loggedOut,
 .loggedIn {
   display: inline-flex;
+}
+
+.menu-curve {
+  width: 400px;
+  height: 100px;
+  background: #06060a;
+  border-radius: 50px / 50px;
+  position: absolute;
+  top: -40px;
+  right: -95px;
+  z-index: -1;
+  box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
 
 @media only screen and (min-width: 1024px) {
