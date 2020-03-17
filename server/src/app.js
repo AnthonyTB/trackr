@@ -6,7 +6,6 @@ const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const app = express();
 const morganOption = NODE_ENV === 'production' ? 'tiny' : 'common';
-const logger = require('./logger');
 const UserRouter = require('./Routes/User-Router');
 const AuthRouter = require('./Routes/Auth-Router');
 
@@ -28,9 +27,5 @@ app.use(function errorHandler(error, req, res, next) {
 
 app.use('/api/users', UserRouter);
 app.use('/api/auth', AuthRouter);
-
-app.get('/api/', (req, res) => {
-  res.send('Hello, world!');
-});
 
 module.exports = app;

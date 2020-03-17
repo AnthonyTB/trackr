@@ -24,11 +24,11 @@ const checkToken = (req, res, next) => {
 
 UserRouter.route('/')
   .post(bodyParser, (req, res, next) => {
-    const { name, email, location, password, username, avatar } = req.body;
+    const { firstname, lastname, email, password, username, avatar } = req.body;
     for (const field of [
-      'name',
+      'firstname',
+      'lastname',
       'email',
-      'location',
       'username',
       'password',
       'avatar'
@@ -50,9 +50,9 @@ UserRouter.route('/')
 
         return UserService.hashPassword(password).then(hashedPassword => {
           const newAccount = {
-            name,
+            firstname,
+            lastname,
             email,
-            location,
             username,
             password: hashedPassword,
             date_created: 'now()',
@@ -87,12 +87,12 @@ UserRouter.route('/')
     });
   });
 
-UserRouter.route('/:username').delete((req, res, next) => {
-  const { username } = req.params;
+UserRouter.route('/').delete((req, res, next) => {
   const knexInstance = req.app.get('db');
+  const user = req.user.id;
 
-  UserService.deleteUser(knexInstance, username)
-    .then(UserService.deleteListingsOfDeletedUser(knexInstance, username))
+  UserService.deleteUser(knexInstance, user)
+    .then(UserService.deleteListingsOfDeletedUser(knexInstance, user))
     .then(res.status(204).end())
     .catch(next);
 });
@@ -107,9 +107,9 @@ UserRouter.route('/public/:username').get(bodyParser, (req, res, next) => {
   });
 });
 
-UserRouter.patch('/edit/:id', bodyParser, async (req, res, next) => {
+UserRouter.patch('/edit', bodyParser, async (req, res, next) => {
   const knexInstance = req.app.get('db');
-  const { id } = req.params;
+  const id = req.user.id;
   const { username, name, email, location, password, avatar } = req.body;
   let updatedData = {
     name,
