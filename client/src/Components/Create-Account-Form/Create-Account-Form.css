@@ -104,17 +104,12 @@ form a:hover::after {
     margin-bottom: 20px;
   }
 
-  input:focus {
-    border-color: red;
-  }
-
   form a {
     font-size: calc(-2px + 2vmin);
   }
 
   form button {
-    font-size: calc(0px + 2vmin);
-    padding: 2px 9px 2px 9px;
-    font-family: kobenhavn-sans, sans-serif;
+    font-size: calc(-3px + 2vmin);
+    padding: 4px 9px 4px 9px;
   }
 }

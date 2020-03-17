@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context/Context';
+import HomeBtn from '../SVGs/homebtn';
+import ChartBtn from '../SVGs/chartbtn';
 
 function DesktopMenu() {
   const { isLoggedIn, updateStatus, Logout } = React.useContext(Context);
@@ -25,11 +27,14 @@ function DesktopMenu() {
 
   return (
     <div className='Desktop-Menu'>
-      <div className='menu-curve'></div>
       <nav>
-        <Link to='/Home'>Home</Link>
-        <Link to='/Improve'>Improve</Link>
-        <p>|</p>
+        <Link to='/Home'>
+          <HomeBtn />
+        </Link>
+        <Link to='/Data'>
+          <ChartBtn />
+        </Link>
+        <hr className='menu-divider' />
         {loginStatus()}
       </nav>
     </div>

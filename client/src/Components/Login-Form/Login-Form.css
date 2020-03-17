@@ -117,6 +117,5 @@ form a:hover::after {
   form button {
     font-size: calc(0px + 2vmin);
     padding: 2px 9px 2px 9px;
-    font-family: kobenhavn-sans, sans-serif;
   }
 }
