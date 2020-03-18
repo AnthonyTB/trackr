@@ -14,6 +14,9 @@ app.use(helmet());
 app.use(cors());
 app.use(express());
 
+app.use('/api/users', UserRouter);
+app.use('/api/auth', AuthRouter);
+
 app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === 'production') {
@@ -24,8 +27,5 @@ app.use(function errorHandler(error, req, res, next) {
   }
   res.status(500).json(response);
 });
-
-app.use('/api/users', UserRouter);
-app.use('/api/auth', AuthRouter);
 
 module.exports = app;
