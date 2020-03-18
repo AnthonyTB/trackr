@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Token from '../../Helpers/Token';
 import User from '../../Helpers/User';
 
@@ -24,27 +24,18 @@ export function ContextProvider(props) {
 
   const [state, dispatch] = React.useReducer(Reducer, {
     isLoggedIn: false,
-    currentUser: {},
+    currentUser: null,
     hasToken: Token.hasAuthToken()
   });
 
   // sets the current loggedin users data in state
-  const setUser = user => () =>
+  const setUser = user =>
     dispatch({
       type: 'currentUser',
       payload: {
         currentUser: user
       }
     });
-
-  const jwtPayload = Token.parseAuthToken();
-  if (jwtPayload) {
-    setUser({
-      id: jwtPayload.user_id,
-      name: jwtPayload.name,
-      username: jwtPayload.sub
-    });
-  }
 
   // sets the loggedin status in state
   const loginStatus = boolean =>
@@ -55,10 +46,24 @@ export function ContextProvider(props) {
       }
     });
 
+  const jwtPayload = Token.parseAuthToken();
+
+  React.useEffect(() => {
+    if (state.hasToken && state.currentUser === null) {
+      if (jwtPayload) {
+        User.getCurrentUser(Token.getAuthToken()).then(res =>
+          setUser(res.dbUser)
+        );
+        loginStatus(true);
+      }
+    }
+  });
+
   // when a user logs in this function is triggered and it saves the users api token
   // to the user's brower local storage and stores the users data in state
   const processLogin = authToken => {
     Token.saveAuthToken(authToken);
+    User.getCurrentUser(Token.getAuthToken()).then(res => setUser(res.dbUser));
     loginStatus(true);
   };
 
@@ -66,18 +71,9 @@ export function ContextProvider(props) {
   // their browsers local storage also it clears the value of currentUser in state
   const processLogout = () => {
     Token.clearAuthToken();
-    setUser({});
+    setUser(null);
     loginStatus(false);
   };
-
-  useEffect(() => {
-    if (Token.hasAuthToken()) {
-      User.getCurrentUser(Token.getAuthToken()).then(data => {
-        setUser(data);
-        loginStatus(true);
-      });
-    }
-  });
 
   const value = {
     dispatch,

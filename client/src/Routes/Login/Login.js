@@ -3,11 +3,11 @@ import './Login.css';
 import Logo from '../../Assets/black-logo.png';
 import LoginForm from '../../Components/Login-Form/Login-Form';
 
-function Login() {
+function Login(props) {
   return (
     <div className='Login'>
       <img className='Branding-Logo' src={Logo} alt='Branding' />
-      <LoginForm />
+      <LoginForm history={props.history} />
     </div>
   );
 }

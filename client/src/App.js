@@ -3,10 +3,10 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Boundary from './Routes/Boundary/Boundary';
 import Landing from './Routes/Landing/Landing';
-import Home from './Routes/Home/Home';
+import Dashboard from './Routes/Dashboard/Dashboard';
 import Login from './Routes/Login/Login';
 import { ContextProvider } from './Components/Context/Context';
-import CreateAccountPage from './Routes/Create-Account/Create-Account';
+import Signup from './Routes/Signup/Signup';
 import DesktopMenu from './Components/DesktopMenu/Menu';
 import MobileMenu from './Components/MobileMenu/Menu';
 import Footer from './Components/Footer/Footer';
@@ -21,36 +21,24 @@ function App() {
           <Route
             exact
             path='/'
-            render={routeProps => {
-              return <Landing {...routeProps} />;
-            }}
+            render={routeProps => <Landing {...routeProps} />}
           />
           <Route
             exact
-            path='/Home'
-            render={routeProps => {
-              return <Home {...routeProps} />;
-            }}
+            path='/Dashboard'
+            render={routeProps => <Dashboard {...routeProps} />}
           />
           <Route
             exact
             path='/Login'
-            render={routeProps => {
-              return <Login {...routeProps} />;
-            }}
+            render={routeProps => <Login {...routeProps} />}
           />
           <Route
             exact
             path='/Signup'
-            render={routeProps => {
-              return <CreateAccountPage {...routeProps} />;
-            }}
+            render={routeProps => <Signup {...routeProps} />}
           />
-          <Route
-            render={routeProps => {
-              return <Boundary {...routeProps} />;
-            }}
-          />
+          <Route render={routeProps => <Boundary {...routeProps} />} />
         </Switch>
         <Footer />
       </ContextProvider>

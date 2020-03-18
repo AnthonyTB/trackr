@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default class Icon extends React.Component {
+export default class HomeIcon extends React.Component {
   render() {
     return (
-      <svg width='24' height='24'>
+      <svg width='36' height='36' viewBox='0 0 24 24'>
         <rect width='24' height='24' fill='none' rx='0' ry='0' />
         <path
           fill-rule='evenodd'

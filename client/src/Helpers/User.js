@@ -55,11 +55,7 @@ const User = {
         'content-type': 'application/json',
         Authorization: `Bearer ${token}`
       }
-    })
-      .then(res => res.json())
-      .then(data => {
-        return data.dbUser;
-      });
+    }).then(res => res.json());
   },
   // api call that handles get public account data request
   getPublicAccountData(username) {

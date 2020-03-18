@@ -1,6 +1,6 @@
 .Desktop-Menu {
   color: #fff;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
@@ -35,8 +35,17 @@
   -webkit-text-fill-color: transparent;
 }
 
-.loggedOut,
-.loggedIn {
+.avatar-btn {
+  background: transparent;
+  border: 0;
+  margin: 10px 0px 10px 0px;
+}
+
+.loggedIn .avatar {
+  width: 50px;
+  height: 100%;
+  border: #29f19c 1px solid;
+  border-radius: 50%;
 }
 
 @media only screen and (min-width: 1024px) {
