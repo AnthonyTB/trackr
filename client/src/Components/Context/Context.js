@@ -46,19 +46,6 @@ export function ContextProvider(props) {
       }
     });
 
-  const jwtPayload = Token.parseAuthToken();
-
-  React.useEffect(() => {
-    if (state.hasToken && state.currentUser === null) {
-      if (jwtPayload) {
-        User.getCurrentUser(Token.getAuthToken()).then(res =>
-          setUser(res.dbUser)
-        );
-        loginStatus(true);
-      }
-    }
-  });
-
   // when a user logs in this function is triggered and it saves the users api token
   // to the user's brower local storage and stores the users data in state
   const processLogin = authToken => {

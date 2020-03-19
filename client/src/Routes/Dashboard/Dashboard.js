@@ -1,13 +1,29 @@
 import React from 'react';
 import './Dashboard.css';
 import { Context } from '../../Components/Context/Context';
+import Search from '../../Components/Search/Search';
+import DashStats from '../../Components/DashStats/DashStats';
+import DashPlatforms from '../../Components/DashPlatforms/DashPlatforms';
 
 function Dashboard() {
   const { currentUser } = React.useContext(Context);
 
   return (
     <div className='Dashboard'>
-      <h1>Welcome, {currentUser ? currentUser.firstname : ''}</h1>
+      {currentUser ? (
+        <h1>Welcome, {currentUser ? currentUser.firstname : ''}</h1>
+      ) : (
+        ''
+      )}
+      <div className='top-center'>
+        <Search />
+      </div>
+      <div className='mid-left'>
+        <DashStats />
+      </div>
+      <div className='mid-right'>
+        <DashPlatforms />
+      </div>
     </div>
   );
 }

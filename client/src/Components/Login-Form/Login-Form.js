@@ -22,7 +22,7 @@ function LoginForm(props) {
   };
 
   return (
-    <form onSubmit={login}>
+    <form className='Login-Form' onSubmit={login}>
       <div className='login-form-container'>
         <label>Username</label>
         <input type='text' name='username' required />

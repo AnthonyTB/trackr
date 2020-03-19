@@ -8,20 +8,33 @@ import ChartBtn from '../SVGs/chartbtn';
 function DesktopMenu() {
   const { isLoggedIn, processLogout, currentUser } = React.useContext(Context);
 
-  console.log(currentUser);
+  const [menuStatus, toggle] = React.useState(false);
+
+  const toggleMenu = () => toggle(!menuStatus);
 
   const loginStatus = () => {
     if (isLoggedIn && currentUser) {
       return (
         <div className='loggedIn'>
-          <button className='avatar-btn'>
+          <button className='avatar-btn' type='button' onClick={toggleMenu}>
             <img
               className='avatar'
               src={currentUser.avatar}
               alt='user avatar'
             />
           </button>
-          <button onClick={processLogout}>Logout</button>
+          <div className={`account-menu ${menuStatus}`}>
+            <Link to={`/profile/${currentUser.username}`}>My Account</Link>
+            <Link to='/settings'>Settings</Link>
+            <button
+              onClick={() => {
+                processLogout();
+                toggleMenu();
+              }}
+            >
+              Logout
+            </button>
+          </div>
         </div>
       );
     } else {

@@ -41,11 +41,32 @@
   margin: 10px 0px 10px 0px;
 }
 
+.loggedIn {
+  width: 100%;
+}
+
 .loggedIn .avatar {
-  width: 50px;
+  width: 40px;
   height: 100%;
-  border: #29f19c 1px solid;
+  border: #22a6b3 2px solid;
   border-radius: 50%;
+}
+
+.account-menu.false {
+  transform: translateX(0px);
+  display: none;
+}
+
+.account-menu.true {
+  display: block;
+  margin: 0;
+  padding: 30px;
+  background-color: #06060a;
+  position: absolute;
+  border-radius: 0 50px 50px 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
 
 @media only screen and (min-width: 1024px) {

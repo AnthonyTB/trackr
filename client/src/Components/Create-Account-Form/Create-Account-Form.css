@@ -7,16 +7,16 @@
   color: #fff;
 }
 
-label,
-input {
+.CreateAccountForm label,
+.CreateAccountForm input {
   display: block;
 }
 
-label:nth-child(1) {
+.CreateAccountForm label:nth-child(1) {
   margin-top: 10px;
 }
 
-input {
+.CreateAccountForm input {
   width: 100%;
   border: 0;
   border-radius: 25px;
@@ -27,7 +27,7 @@ input {
   font-size: calc(0px + 2vmin);
 }
 
-label {
+.CreateAccountForm label {
   margin-bottom: 5px;
   font-family: kobenhavn-sans, sans-serif;
   font-size: calc(6px + 2vmin);
@@ -36,7 +36,7 @@ label {
   -webkit-text-fill-color: transparent;
 }
 
-form {
+.CreateAccountForm form {
   width: 65%;
 }
 
@@ -47,7 +47,7 @@ form {
   box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
 
-form button {
+.CreateAccountForm form button {
   color: #06060a;
   border-radius: 15px;
   font-size: calc(5px + 2vmin);
@@ -61,7 +61,7 @@ form button {
   cursor: pointer;
 }
 
-form a {
+.CreateAccountForm form a {
   color: #06060a;
   text-decoration: none;
   font-size: calc(5px + 2vmin);
@@ -69,7 +69,7 @@ form a {
   margin-top: 15px;
 }
 
-form a::after {
+.CreateAccountForm form a::after {
   content: '';
   display: block;
   width: 0;
@@ -78,37 +78,37 @@ form a::after {
   transition: width 0.3s;
 }
 
-form a:hover::after {
+.CreateAccountForm form a:hover::after {
   width: 100%;
   transition: width 0.3s;
 }
 
 @media only screen and (min-width: 1200px) {
-  form {
+  .CreateAccountForm form {
     width: 20%;
   }
 
-  input,
-  label {
+  .CreateAccountForm input,
+  .CreateAccountForm label {
     width: 80%;
     margin: auto auto;
   }
 
-  label {
+  .CreateAccountForm label {
     font-size: calc(-2px + 2vmin);
     margin-bottom: 10px;
   }
 
-  input {
+  .CreateAccountForm input {
     padding: 10px;
     margin-bottom: 20px;
   }
 
-  form a {
+  .CreateAccountForm form a {
     font-size: calc(-2px + 2vmin);
   }
 
-  form button {
+  .CreateAccountForm form button {
     font-size: calc(-3px + 2vmin);
     padding: 4px 9px 4px 9px;
   }
