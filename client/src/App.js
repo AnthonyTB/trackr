@@ -14,12 +14,12 @@ import User from './Helpers/User';
 import { Context } from './Components/Context/Context';
 
 function App() {
-  const { currentUser, setUser, loginStatus, hasToken } = React.useContext(
+  const { isLoggedIn, setUser, loginStatus, hasToken } = React.useContext(
     Context
   );
 
   React.useEffect(() => {
-    if (hasToken && currentUser == null) {
+    if (hasToken && !isLoggedIn) {
       if (Token.parseAuthToken()) {
         User.getCurrentUser(Token.getAuthToken()).then(res =>
           setUser(res.dbUser)

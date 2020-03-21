@@ -2,8 +2,11 @@ import React from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context/Context';
-import HomeBtn from '../SVGs/homebtn';
-import ChartBtn from '../SVGs/chartbtn';
+import HomeBtn from '../SVG/homebtn';
+import ChartBtn from '../SVG/chartbtn';
+import Profile from '../SVG/profile';
+import Setting from '../SVG/setting';
+import Logout from '../SVG/logout';
 
 function DesktopMenu() {
   const { isLoggedIn, processLogout, currentUser } = React.useContext(Context);
@@ -24,16 +27,25 @@ function DesktopMenu() {
             />
           </button>
           <div className={`account-menu ${menuStatus}`}>
-            <Link to={`/profile/${currentUser.username}`}>My Account</Link>
-            <Link to='/settings'>Settings</Link>
-            <button
-              onClick={() => {
-                processLogout();
-                toggleMenu();
-              }}
-            >
-              Logout
-            </button>
+            <div className='menu-item'>
+              <Profile />
+              <Link to={`/profile/${currentUser.username}`}>My Account</Link>
+            </div>
+            <div className='menu-item'>
+              <Setting />
+              <Link to='/settings'>Settings</Link>
+            </div>
+            <div className='menu-item'>
+              <Logout />
+              <button
+                onClick={() => {
+                  processLogout();
+                  toggleMenu();
+                }}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       );

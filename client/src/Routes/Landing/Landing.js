@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landing.css';
 import smallLogo from '../../Assets/black-logo.png';
-import ChartIcon from '../../Components/SVGs/chart';
+import ChartIcon from '../../Components/SVG/chart';
 import mediaPlaforms from '../../Assets/socials.svg';
 
 function Landing() {

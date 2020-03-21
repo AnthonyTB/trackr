@@ -7,14 +7,19 @@ import DashPlatforms from '../../Components/DashPlatforms/DashPlatforms';
 
 function Dashboard() {
   const { currentUser } = React.useContext(Context);
+  const [message, messageUpdater] = React.useState(
+    currentUser ? <h1>Welcome, {currentUser.firstname}</h1> : 'hi'
+  );
+
+  // React.useEffect(() => {
+  //   if (message !== null) {
+  //     setTimeout(() => messageUpdater(null), 5000);
+  //   }
+  // });
 
   return (
     <div className='Dashboard'>
-      {currentUser ? (
-        <h1>Welcome, {currentUser ? currentUser.firstname : ''}</h1>
-      ) : (
-        ''
-      )}
+      {currentUser ? message : ''}
       <div className='top-center'>
         <Search />
       </div>

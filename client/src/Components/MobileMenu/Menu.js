@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context/Context';
-import MenuIcon from '../SVGs/menu';
-import CloseMenuIcon from '../SVGs/close-menu';
+import MenuIcon from '../SVG/menu';
+import CloseMenuIcon from '../SVG/close-menu';
 
 function MobileMenu() {
   const { isLoggedIn, Logout } = React.useContext(Context);
