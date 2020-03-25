@@ -14,50 +14,56 @@ import User from './Helpers/User';
 import { Context } from './Components/Context/Context';
 
 function App() {
-  const { isLoggedIn, setUser, loginStatus, hasToken } = React.useContext(
+  const { currentUser, setUser, loginStatus, hasToken } = React.useContext(
     Context
   );
 
   React.useEffect(() => {
-    if (hasToken && !isLoggedIn) {
-      if (Token.parseAuthToken()) {
-        User.getCurrentUser(Token.getAuthToken()).then(res =>
-          setUser(res.dbUser)
-        );
-        loginStatus(true);
+    const fetchData = async () => {
+      if (hasToken && !currentUser) {
+        if (Token.parseAuthToken()) {
+          const response = await User.getCurrentUser(Token.getAuthToken());
+          setUser(response.dbUser);
+          loginStatus(true);
+        }
       }
-    }
-  });
+    };
+    fetchData();
+  }, [currentUser, hasToken, loginStatus, setUser]);
 
   return (
-    <>
-      <DesktopMenu />
-      <MobileMenu />
-      <Switch>
-        <Route
-          exact
-          path='/'
-          render={routeProps => <Landing {...routeProps} />}
-        />
-        <Route
-          exact
-          path='/Dashboard'
-          render={routeProps => <Dashboard {...routeProps} />}
-        />
-        <Route
-          exact
-          path='/Login'
-          render={routeProps => <Login {...routeProps} />}
-        />
-        <Route
-          exact
-          path='/Signup'
-          render={routeProps => <Signup {...routeProps} />}
-        />
-        <Route render={routeProps => <Boundary {...routeProps} />} />
-      </Switch>
-      <Footer />
-    </>
+    <div className='App'>
+      <div className='menu-container'>
+        <DesktopMenu />
+        <MobileMenu />
+      </div>
+      <div className='main-container'>
+        <Switch>
+          <Route
+            exact
+            path='/'
+            render={routeProps => <Landing {...routeProps} />}
+          />
+          <Route
+            exact
+            path='/Dashboard'
+            render={routeProps => <Dashboard {...routeProps} />}
+          />
+          <Route
+            exact
+            path='/Login'
+            render={routeProps => <Login {...routeProps} />}
+          />
+          <Route
+            exact
+            path='/Signup'
+            render={routeProps => <Signup {...routeProps} />}
+          />
+          <Route render={routeProps => <Boundary {...routeProps} />} />
+        </Switch>
+        <Footer />
+      </div>
+    </div>
   );
 }
 

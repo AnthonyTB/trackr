@@ -20,14 +20,14 @@ function Dashboard() {
   return (
     <div className='Dashboard'>
       {currentUser ? message : ''}
+      <div className='top-center'>
+        <Search />
+      </div>
       <div className='container'>
-        <div className='top-center'>
-          <Search />
-        </div>
-        <div className='mid-left'>
+        <div className='container-item'>
           <DashStats />
         </div>
-        <div className='mid-right'>
+        <div className='container-item'>
           <DashPlatforms />
         </div>
       </div>

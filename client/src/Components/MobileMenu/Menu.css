@@ -10,40 +10,52 @@
 
 .Mobile-Menu {
   position: fixed;
-  top: 0;
-  right: 10px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
   margin-top: 10px;
-  margin-right: 10px;
-  z-index: 2000;
+  z-index: 3100;
+  background: #06060a;
+  box-shadow: 0px 11px 21px 12px rgba(0, 0, 0, 0.5);
+}
+
+.Mobile-Menu nav {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  margin: auto auto;
+  text-align: center;
+}
+
+.menu-item {
+  margin-top: 30px;
 }
 
 .menu-button {
-  float: right;
   background: #fff;
   padding: 2px 3px 2px 3px;
   border-radius: 50%;
-  margin: 0;
   border: 0;
+  position: relative;
   margin-bottom: 10px;
-  z-index: 2000;
-  box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+  z-index: 2020;
 }
 
 .slide-out {
   clear: both;
   margin-top: 15px;
-  margin-right: -40px;
   height: 45%;
   width: 200px;
   background-color: #fff;
-  transform: translateX(200px);
-  border-radius: 50px 0 0 50px;
-  overflow-x: hidden;
+  transform: translateY(200px);
+  border-radius: 50px 50px 0 0px;
+  overflow-y: hidden;
   padding-top: 60px;
   transition: 0.5s;
   box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
 
 .slide-out.true {
-  transform: translateX(0px);
+  transform: translateY(0px);
 }

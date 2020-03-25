@@ -31,10 +31,24 @@ function MobileMenu() {
   return (
     <div className='Mobile-Menu'>
       <nav>
-        <button className='menu-button' onClick={() => toggleMenu()}>
-          {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
-        </button>
-        <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
+        <div className='menu-item'>
+          <button className='menu-button' onClick={() => toggleMenu()}>
+            {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+          </button>
+          <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
+        </div>
+        <div className='menu-item'>
+          <button className='menu-button' onClick={() => toggleMenu()}>
+            {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+          </button>
+          <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
+        </div>
+        <div className='menu-item'>
+          <button className='menu-button' onClick={() => toggleMenu()}>
+            {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+          </button>
+          <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
+        </div>
       </nav>
     </div>
   );
