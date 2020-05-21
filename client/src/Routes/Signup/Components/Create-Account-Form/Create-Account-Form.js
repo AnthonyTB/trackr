@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Create-Account-Form.css';
-import User from '../../Helpers/User';
+import User from '../../../../Helpers/User';
 
 function CreateAccountForm(props) {
   const [errorStatus, setError] = React.useState(null);
 
-  const formSubmit = ev => {
+  const formSubmit = (ev) => {
     ev.preventDefault();
     const { firstname, lastname, email, username, password } = ev.target;
     const newAccount = {
@@ -16,11 +16,11 @@ function CreateAccountForm(props) {
         'https://www.sackettwaconia.com/wp-content/uploads/default-profile.png',
       email: email.value,
       username: username.value.toLowerCase(),
-      password: password.value
+      password: password.value,
     };
     User.createAccount(newAccount)
       .then(() => props.history.push('/Login'))
-      .catch(res => setError(res));
+      .catch((res) => setError(res));
   };
 
   return (

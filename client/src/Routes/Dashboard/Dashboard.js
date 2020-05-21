@@ -1,9 +1,7 @@
 import React from 'react';
 import './Dashboard.css';
 import { Context } from '../../Components/Context/Context';
-import Search from '../../Components/Search/Search';
-import DashStats from '../../Components/DashStats/DashStats';
-import DashPlatforms from '../../Components/DashPlatforms/DashPlatforms';
+import { Search, DashStats, DashPlatforms } from './Components/';
 
 function Dashboard() {
   const { currentUser } = React.useContext(Context);

@@ -1,5 +1,5 @@
 import { React } from 'react';
 
-export function Profile() {
+export default function Profile() {
   return <div className='Profile'></div>;
 }

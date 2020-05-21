@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landing.css';
-import smallLogo from '../../Assets/black-logo.png';
-import ChartIcon from '../../Components/SVG/chart';
-import mediaPlaforms from '../../Assets/socials.svg';
+import { BrandingW, Chart, Socials } from '../../Assets/';
 
 function Landing() {
   return (
@@ -20,7 +18,7 @@ function Landing() {
       <div className='hero-text'>
         <h3>
           Here at{' '}
-          <img className='smallLogo' src={smallLogo} alt='trackr logo' /> we
+          <img className='smallLogo' src={BrandingW} alt='trackr logo' /> we
           make that data accessible to you<span className='alt-color'>.</span>
         </h3>
       </div>
@@ -33,7 +31,7 @@ function Landing() {
         <div className='sources-container'>
           <img
             className='media-platforms'
-            src={mediaPlaforms}
+            src={Socials}
             alt='social media platforms'
           />
         </div>
@@ -49,7 +47,7 @@ function Landing() {
           </p>
         </div>
         <div className='chart-svg'>
-          <ChartIcon />
+          <Chart />
         </div>
       </section>
     </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import './Signup.css';
-import CreateAccountForm from '../../Components/Create-Account-Form/Create-Account-Form';
-import Logo from '../../Assets/black-logo.png';
+import { CreateAccountForm } from './Components/';
+import { BrandingW } from '../../Assets/';
 
 function Signup(props) {
   return (
     <div className='CreateAccount'>
-      <img className='Branding-Logo' src={Logo} alt='Branding' />
+      <img className='Branding-Logo' src={BrandingW} alt='Branding' />
       <p className='Heading'>
         Create an account to track all of your social media analytics.
       </p>

@@ -1,9 +1,8 @@
 import React from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context/Context';
-import MenuIcon from '../SVG/menu';
-import CloseMenuIcon from '../SVG/close-menu';
+import { Context } from '../../Context/Context';
+import { Menu, CloseMenu } from '../../../Assets/';
 
 function MobileMenu() {
   const { isLoggedIn, Logout } = React.useContext(Context);
@@ -33,19 +32,19 @@ function MobileMenu() {
       <nav>
         <div className='menu-item'>
           <button className='menu-button' onClick={() => toggleMenu()}>
-            {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+            {menuStatus ? <CloseMenu /> : <Menu />}
           </button>
           <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
         </div>
         <div className='menu-item'>
           <button className='menu-button' onClick={() => toggleMenu()}>
-            {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+            {menuStatus ? <CloseMenu /> : <Menu />}
           </button>
           <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
         </div>
         <div className='menu-item'>
           <button className='menu-button' onClick={() => toggleMenu()}>
-            {menuStatus ? <CloseMenuIcon /> : <MenuIcon />}
+            {menuStatus ? <CloseMenu /> : <Menu />}
           </button>
           <div className={`slide-out ${menuStatus}`}>{loginStatus()}</div>
         </div>
