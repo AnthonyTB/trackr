@@ -3,19 +3,30 @@
   position: fixed;
   left: 0;
   top: 0;
-  height: 100vh;
-  z-index: 60;
-  background-color: #06060a;
-  box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
 }
 
-.Desktop-Menu nav {
+.Desktop-Menu .menuToggler {
+  background: none;
+  padding: 0;
+  border: 0;
+  display: inline;
+  outline: none;
+}
+
+.Desktop-Menu nav.open {
   text-align: center;
   margin-top: 20px;
   position: relative;
   z-index: 2000;
+  height: 100vh;
+  width: 100px;
+  z-index: 60;
+  background-color: #06060a;
+  display: inline-flex;
+  justify-content: center;
+}
+.Desktop-Menu nav.closed {
+  width: 0px;
 }
 
 .Desktop-Menu a {
@@ -25,16 +36,6 @@
   padding: 0;
   margin-bottom: 10px;
   font-size: calc(2vmin + -3px);
-}
-
-.Desktop-Menu .menu-divider {
-  background: var(--gradient);
-  margin: auto auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 80%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .avatar-btn {

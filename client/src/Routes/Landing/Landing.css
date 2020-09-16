@@ -98,7 +98,7 @@
 }
 
 .curve {
-  background-image: url('../../Assets/SVG/curve2.svg');
+  background-image: url("../../Assets/SVG/curve2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 350px;
@@ -127,7 +127,7 @@
   color: #06060a;
 }
 
-.chart-svg {
+.data .svg {
   margin-top: 40px;
   height: auto;
   width: 370px;
@@ -209,7 +209,7 @@
     margin-top: 0;
   }
 
-  .chart-svg {
+  .data .svg {
     width: 660px;
   }
 }
