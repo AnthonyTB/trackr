@@ -2,20 +2,13 @@ import React, { FunctionComponent } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
 import "./Landing.css";
 import { BrandingB, Chart } from "../../Assets";
-import Section from "./Components/Section/Section";
+import { Section, Hero } from "./Components/";
 
 const Landing: FunctionComponent<RouteComponentProps> = () => {
   return (
     <div className="Landing">
-      <div className="Hero">
-        <h1>
-          Are you curious about your social media traffic
-          <span className="alt-color">?</span>
-        </h1>
-      </div>
-      <div>
-        <div className="curve"></div>
-      </div>
+      <Hero />
+      <div className="curve" />
       <div className="hero-text">
         <h3>
           Here at{" "}
